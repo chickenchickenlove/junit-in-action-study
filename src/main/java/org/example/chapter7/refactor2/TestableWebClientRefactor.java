@@ -17,7 +17,4 @@ public class TestableWebClientRefactor extends WebClientRefactor{
     protected HttpURLConnection createHttpURLConnection(URL url) throws IOException {
         return this.connection;
     }
-
-
-
 }

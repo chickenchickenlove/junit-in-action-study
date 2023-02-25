@@ -13,13 +13,17 @@ class WebClientRefactor2Test {
 
     @Test
     void test1() {
+        // Mock 객체 생성
         MockURLConnectionFactory mockURLConnectionFactory = new MockURLConnectionFactory();
         mockURLConnectionFactory.setData(new ByteArrayInputStream("It works".getBytes()));
+
+        // 테스트 대상 생성
         WebClientRefactor2 webClient = new WebClientRefactor2();
+
+        // 테스트 실행
         String content = webClient.getContent(mockURLConnectionFactory);
+
+        // 테스트 검증
         assertEquals("It works".getBytes(), content);
     }
-
-
-
 }

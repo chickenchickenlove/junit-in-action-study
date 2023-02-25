@@ -9,6 +9,7 @@ public class WebClientRefactor {
     public String getContent(URL url) {
         StringBuffer content = new StringBuffer();
         try{
+            // createHttpURLConnection() 메서드 도입
             HttpURLConnection connection = createHttpURLConnection(url);
             connection.setDoInput(true);
             InputStream is = connection.getInputStream();

@@ -6,7 +6,6 @@ import java.net.URL;
 
 public class HttpURLConnectionFactory implements ConnectionFactory{
 
-
     private URL url;
 
     public HttpURLConnectionFactory(URL url) {

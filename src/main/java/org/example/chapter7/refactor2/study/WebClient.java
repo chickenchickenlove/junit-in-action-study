@@ -1,23 +1,19 @@
-package org.example.chapter7.refactor2;
+package org.example.chapter7.refactor2.study;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 
 public class WebClient {
 
     public WebClient() {
     }
 
-    public String getContent(URL url) {
+    public String getContent(UrlConnectionFactory factory) {
         StringBuffer content = new StringBuffer();
         try{
-//             이거 있어서 안됨.
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoInput(true);
-            InputStream is = connection.getInputStream();
+            InputStream is = factory.getInputStream();
             int count ;
             while (-1 != (count = is.read())) {
                 content.append(new String(Character.toChars(count)));
